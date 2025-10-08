@@ -6,14 +6,14 @@ list_of_dictionaries = [
       ]
 
 
-def filter_by_state(operations: list, state: str) -> list:
+def filter_by_state(dicts: list, state: str) -> list:
     """
     Фильтрует список словарей по значению ключа 'state'
     """
     output_list = []
-    for operation in operations:
-      if operation.get('state') == state:
-          output_list.append(operation)
+    for i in dicts:
+      if i.get('state') == state:
+          output_list.append(i)
     return output_list
 
 
