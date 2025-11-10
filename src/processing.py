@@ -25,6 +25,6 @@ def sort_by_date(list, reverse=True):
     return sorted(list, key=lambda x: x["date"], reverse=reverse)
 
 
-print(sort_by_date(list_of_dictionaries, True))
+print(sort_by_date(list_of_dictionaries, True))774
 
 print(sort_by_date(list_of_dictionaries, False))
