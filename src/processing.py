@@ -1,30 +1,24 @@
 # Список словарей
-list_of_dictionaries = []
+operations_list = []
 
 
-def filter_by_state(operations: list, state: str) -> list:
+def filter_by_state(operations: list, state: str = "EXECUTED") -> list:
     """Возвращает список словарей по значению ключа 'state'"""
-
-    output_list = []
-
+    filtered_list = []
     for operation in operations:
-      if operation.get('state') == state:
-          output_list.append(operation)
-    return output_list
+        if operation.get("state") == state:
+            filtered_list.append(operation)
+    return filtered_list
 
 
-state = input() or 'EXECUTED'
-title: str
-
-print(filter_by_state(list_of_dictionaries, state))
+user_state = input() or "EXECUTED"
+print(filter_by_state(operations_list, user_state))
 
 
-def sort_by_date(list, reverse=True):
-    """Фильтрует список словарей по дате"""
+def sort_by_date(operations: list, reverse: bool = True) -> list:
+    """Сортирует список словарей по дате"""
+    return sorted(operations, key=lambda x: x["date"], reverse=reverse)
 
-    return sorted(list, key=lambda x: x['date'], reverse=reverse)
 
-
-print(sort_by_date(list_of_dictionaries, True))
-
-print(sort_by_date(list_of_dictionaries, False))
+print(sort_by_date(operations_list, True))
+print(sort_by_date(operations_list, False)
