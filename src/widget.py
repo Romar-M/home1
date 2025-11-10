@@ -19,7 +19,6 @@ def mask_account_card(account_or_card: str) -> str:
 
 
 account_or_card = input()  # входной аргумент
-title: str
 print(mask_account_card(account_or_card))
 
 
