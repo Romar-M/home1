@@ -31,6 +31,6 @@ if __name__ == "__main__":
 
     # Ввод и вывод для сортировки операций
     reverse_input = input("Сортировать по убыванию (true/false): ")
-    reverse_sort = reverse_input.lower() == 'true'
+    reverse_sort = reverse_input.lower() == "true"
     sorted_operations = sort_by_date(operations_list, reverse_sort)
     print(sorted_operations)

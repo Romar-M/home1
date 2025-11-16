@@ -1,4 +1,4 @@
-from src.masks import get_mask_card_number, get_mask_account
+from src.masks import get_mask_account, get_mask_card_number
 
 
 def mask_account_card(account_or_card: str) -> str:
@@ -38,11 +38,11 @@ def get_date(date_and_time: str) -> str:
         date_part, time_part = date_and_time.split("T")
 
         # Проверяем формат даты
-        if len(date_part) != 10 or date_part[4] != '-' or date_part[7] != '-':
+        if len(date_part) != 10 or date_part[4] != "-" or date_part[7] != "-":
             return "Неверный формат данных"
 
         # Проверяем формат времени
-        if len(time_part) != 8 or time_part[2] != ':' or time_part[5] != ':':
+        if len(time_part) != 8 or time_part[2] != ":" or time_part[5] != ":":
             return "Неверный формат данных"
 
         # Извлекаем компоненты
