@@ -1,4 +1,3 @@
-import pytest
 import json
 import tempfile
 import os
@@ -15,14 +14,11 @@ class TestLoadOperations:
                 "id": 441945886,
                 "state": "EXECUTED",
                 "date": "2019-08-26T10:50:58.294041",
-                "operationAmount": {
-                    "amount": "31957.58",
-                    "currency": {"name": "руб.", "code": "RUB"}
-                }
+                "operationAmount": {"amount": "31957.58", "currency": {"name": "руб.", "code": "RUB"}},
             }
         ]
 
-        with tempfile.NamedTemporaryFile(mode='w', suffix='.json', delete=False) as f:
+        with tempfile.NamedTemporaryFile(mode="w", suffix=".json", delete=False) as f:
             json.dump(test_data, f)
             temp_file = f.name
 
@@ -34,7 +30,7 @@ class TestLoadOperations:
 
     def test_load_empty_file(self):
         """Тестирование загрузки пустого файла"""
-        with tempfile.NamedTemporaryFile(mode='w', suffix='.json', delete=False) as f:
+        with tempfile.NamedTemporaryFile(mode="w", suffix=".json", delete=False) as f:
             temp_file = f.name
 
         try:
@@ -50,7 +46,7 @@ class TestLoadOperations:
 
     def test_load_invalid_json(self):
         """Тестирование загрузки файла с невалидным JSON"""
-        with tempfile.NamedTemporaryFile(mode='w', suffix='.json', delete=False) as f:
+        with tempfile.NamedTemporaryFile(mode="w", suffix=".json", delete=False) as f:
             f.write("invalid json content")
             temp_file = f.name
 
@@ -64,7 +60,7 @@ class TestLoadOperations:
         """Тестирование загрузки JSON, который не является списком"""
         test_data = {"id": 1, "name": "test"}
 
-        with tempfile.NamedTemporaryFile(mode='w', suffix='.json', delete=False) as f:
+        with tempfile.NamedTemporaryFile(mode="w", suffix=".json", delete=False) as f:
             json.dump(test_data, f)
             temp_file = f.name
 
