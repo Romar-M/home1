@@ -1,6 +1,7 @@
 from src.masks import get_mask_card_number, get_mask_account
 from src.widget import mask_account_card, get_date
 from src.processing import filter_by_state, sort_by_date
+from src.data_loader import load_transactions_from_csv, load_transactions_from_excel
 
 if __name__ == "__main__":
     # Ввод и вывод для маскировки карты
