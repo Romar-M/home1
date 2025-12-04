@@ -116,7 +116,7 @@ class TestLogDecorator:
 
         # Проверяем, что в файле 3 записи
         content = log_file.read_text(encoding="utf-8")
-        lines = content.strip().split('\n')
+        lines = content.strip().split("\n")
         assert len(lines) == 3
         assert all("counter ok" in line for line in lines)
 
