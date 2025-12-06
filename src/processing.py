@@ -1,3 +1,6 @@
+from .search import process_bank_operations as count_by_category
+
+
 def filter_by_state(operations: list, state: str = "EXECUTED") -> list:
     """Возвращает список словарей по значению ключа 'state'"""
     if not operations or not isinstance(operations, list):
