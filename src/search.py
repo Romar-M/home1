@@ -1,4 +1,5 @@
 import re
+from collections import Counter
 from typing import List, Dict, Any
 
 
@@ -24,18 +25,17 @@ def process_bank_operations(data: List[Dict[str, Any]], categories: List[str]) -
     """
     Подсчитывает количество операций по категориям.
     """
-    result = {category: 0 for category in categories}
-
     if not data or not categories:
-        return result
+        return {category: 0 for category in categories}
+
+    counter = Counter()
 
     for operation in data:
         description = operation.get('description', '')
         if description:
-            # Приводим описание к нижнему регистру для сравнения
             desc_lower = description.lower()
             for category in categories:
                 if category.lower() in desc_lower:
-                    result[category] += 1
+                    counter[category] += 1
 
-    return result
+    return dict(counter)
